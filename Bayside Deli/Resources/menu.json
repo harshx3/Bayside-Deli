@@ -1,0 +1,118 @@
+[
+  {
+    "id": "1",
+    "name": "Chicken Italiano",
+    "breadOptions": [
+      "Roll",
+      "Hero"
+    ],
+    "proteinOptions": [
+      "Grilled Chicken"
+    ],
+    "description": "Grilled Chicken, Melted Fresh Mozzarella, Lettuce & Roasted Peppers",
+    "priceRoll": 8.99,
+    "priceHero": 10.99
+  },
+  {
+    "id": "2",
+    "name": "The Alps",
+    "breadOptions": [
+      "Roll",
+      "Hero"
+    ],
+    "proteinOptions": [
+      "Grilled Chicken"
+    ],
+    "description": "Grilled Chicken, Lacey Swiss Cheese & Coleslaw",
+    "priceRoll": 8.99,
+    "priceHero": 10.99
+  },
+  {
+    "id": "3",
+    "name": "Baumann",
+    "breadOptions": [
+      "Roll",
+      "Hero"
+    ],
+    "proteinOptions": [
+      "Pastrami",
+      "Bacon"
+    ],
+    "description": "Grilled Pastrami, Bacon, 3 Cheeses, Lettuce, Tomato & Spicy Mustard",
+    "priceRoll": 8.99,
+    "priceHero": 10.99
+  },
+  {
+    "id": "4",
+    "name": "Moonstruck",
+    "breadOptions": [
+      "Roll",
+      "Hero"
+    ],
+    "proteinOptions": [
+      "Grilled Marinated Chicken"
+    ],
+    "description": "Grilled Marinated Chicken & Roasted Peppers",
+    "priceRoll": 8.99,
+    "priceHero": 10.99
+  },
+  {
+    "id": "5",
+    "name": "Cordon Bleu",
+    "breadOptions": [
+      "Roll",
+      "Hero"
+    ],
+    "proteinOptions": [
+      "Fried Chicken Cutlet"
+    ],
+    "description": "Fried Chicken Cutlet, Prosciutto & Melted Mozzarella",
+    "priceRoll": 8.99,
+    "priceHero": 10.99
+  },
+  {
+    "id": "6",
+    "name": "Cancun",
+    "breadOptions": [
+      "Roll",
+      "Hero"
+    ],
+    "proteinOptions": [
+      "Chicken Salad",
+      "Virginia Ham"
+    ],
+    "description": "Chicken Salad, Virginia Ham, Lettuce & Tomato",
+    "priceRoll": 8.99,
+    "priceHero": 10.99
+  },
+  {
+    "id": "7",
+    "name": "Borderlands",
+    "breadOptions": [
+      "Roll",
+      "Hero"
+    ],
+    "proteinOptions": [
+      "Grilled Marinated Chicken"
+    ],
+    "description": "Grilled Marinated Chicken, Melted Jalapeno Pepper Jack Cheese & Salsa",
+    "priceRoll": 8.99,
+    "priceHero": 10.99
+  },
+  {
+    "id": "8",
+    "name": "Grandson",
+    "breadOptions": [
+      "Roll",
+      "Hero"
+    ],
+    "proteinOptions": [
+      "Mortadella",
+      "Cappy Ham",
+      "Genoa Salami"
+    ],
+    "description": "Mortadella, Cappy Ham, Genoa Salami, Provolone, Lettuce, Tomato, Roasted Peppers & Olive Oil",
+    "priceRoll": 8.99,
+    "priceHero": 10.99
+  }
+]
