@@ -9,21 +9,25 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var searchText: String = ""
+ @State var selectedTab = "Home"
   
     var body: some View {
 
-        ZStack {
-            Color("Background")
-                            .ignoresSafeArea()
-            
-            ScrollView {
+
+                
+            ZStack {
+                Color("Background")
+                    .ignoresSafeArea()
+                
+                
+                VStack {
+                    Text("Good Evening, Apple Valley!")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .fontDesign(.monospaced)
+                        .foregroundStyle(.secondaryText)
                     
-                    VStack {
-                        Text("Good Evening, Apple Pie!")
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                            .fontDesign(.monospaced)
-                            .foregroundStyle(.primaryText)
+                ScrollView {
                         
                         //Hero Banner
                         ZStack {
@@ -37,7 +41,7 @@ struct HomeView: View {
                             VStack(spacing: 15) {
                                 Text("Order Now")
                                     .font(.largeTitle)
-                                    .foregroundColor(.primaryText)
+                                    .foregroundColor(.secondaryText)
                                     .fontWeight(.bold)
                                 
                                 Text("Pick up 215-15 39 ave, Bayside")
@@ -49,7 +53,7 @@ struct HomeView: View {
                                 } label: {
                                     Text("Start your order")
                                         .font(.title)
-                                        .foregroundStyle(.white)
+                                        .foregroundStyle(.primaryText)
                                         .padding(.vertical,15)
                                         .padding(.horizontal, 60)
                                         .background(.primaryBtn)
@@ -58,9 +62,6 @@ struct HomeView: View {
                             }
                             .padding(.bottom, 40)
                         }
-                        
-                
-                        
                         
                         //Explore category
                         VStack {
@@ -78,7 +79,7 @@ struct HomeView: View {
                                 CategoryView(categoryName: "Hot", categoryImage: .hot, categoryDescription: "Sizzling")
                             }
                         }
-                    
+                        
                         
                         // Popular Picks
                         VStack {
@@ -100,12 +101,16 @@ struct HomeView: View {
                             SandwichCardView(sandwichName: "Turkey Club", sandwichImage: .turkeyClub, ingredients: "Ovengold Turkey, Bacon, Lettuce, Tomato, Mayonnaise", price: 8.99)
                         }
                         
+                        
                     }
+                .padding(.bottom, 90)
+                }
+                //TabBar
+                TabBarView(selectedTab: $selectedTab)
+                
+                
             }
-            
         }
-        
-    }
 }
 
 #Preview {
