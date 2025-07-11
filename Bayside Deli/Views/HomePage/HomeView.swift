@@ -9,7 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var searchText: String = ""
- @State var selectedTab = "Home"
+    @Binding var selectedTab: String
+    
+    @StateObject private var dataService = DataService()
+    
+   
   
     var body: some View {
 
@@ -88,25 +92,20 @@ struct HomeView: View {
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(.leading)
                                 .foregroundStyle(.primaryText)
+                     
                             
-                            //Sandwich Card View
-                            SandwichCardView(sandwichName: "Turkey Club", sandwichImage: .turkeyClub, ingredients: "Ovengold Turkey, Bacon, Lettuce, Tomato, Mayonnaise", price: 8.99)
+                            ForEach(dataService.sandwiches.shuffled().prefix(5)) { picked in
+                                SandwichCardView(sandwichName: picked.name, sandwichImage: picked.sandwichImage, description: picked.description, rollPrice: picked.rollPrice, heroPrice: picked.heroPrice)
+                            }
                             
-                            SandwichCardView(sandwichName: "Turkey Club", sandwichImage: .baconEggandCheese, ingredients: "Ovengold Turkey, Bacon, Lettuce, Tomato, Mayonnaise", price: 8.99)
-                            
-                            SandwichCardView(sandwichName: "Turkey Club", sandwichImage: .turkeyClub, ingredients: "Ovengold Turkey, Bacon, Lettuce, Tomato, Mayonnaise", price: 8.99)
-                            
-                            SandwichCardView(sandwichName: "Turkey Club", sandwichImage: .baconEggandCheese, ingredients: "Ovengold Turkey, Bacon, Lettuce, Tomato, Mayonnaise", price: 8.99)
-                            
-                            SandwichCardView(sandwichName: "Turkey Club", sandwichImage: .turkeyClub, ingredients: "Ovengold Turkey, Bacon, Lettuce, Tomato, Mayonnaise", price: 8.99)
-                        }
+                      
+                                                    }
                         
                         
                     }
                 .padding(.bottom, 90)
                 }
-                //TabBar
-                TabBarView(selectedTab: $selectedTab)
+
                 
                 
             }
@@ -116,5 +115,5 @@ struct HomeView: View {
 #Preview {
 
 
-    HomeView()
+    HomeView(selectedTab: .constant("Home"))
 }

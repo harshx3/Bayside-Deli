@@ -8,32 +8,38 @@
 import SwiftUI
 
 struct SandwichCardView: View {
-    @State var sandwichName: String
-    @State var sandwichImage: ImageResource
-    @State var ingredients: String
-    @State var price: Double
+     var sandwichName: String
+     var sandwichImage: String
+     var description: String
+     var rollPrice: Double
+     var heroPrice: Double
+    
     var body: some View {
-        HStack(alignment: .center) {
+        HStack(alignment: .center, spacing: 15) {
             Image(sandwichImage)
                 .resizable()
                 .scaledToFit()
-                .frame(height: 80)
+                .frame(width:80, height: 80)
                 .clipShape(.buttonBorder)
                 .padding(.trailing)
             
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 2) {
                 Text(sandwichName)
                     .font(.system(size: 20, weight: .bold))
                     .foregroundStyle(.primaryText)
-                Text(ingredients)
+                Text(description)
                     .font(.system(size: 15, design: .default))
                     .foregroundStyle(.secondaryText)
                 
-                Text(String(format: "$%.2f", price))
-                    .font(.system(size: 20, weight: .semibold, design: .monospaced))
-                    .foregroundStyle(.secondaryText)
+                HStack {
+                    Text(String(format: "$%.2f", rollPrice))
+                        .font(.system(size: 15, weight: .semibold, design: .monospaced))
+                        .foregroundStyle(.secondaryText)
+                }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .frame(maxWidth: .infinity)
         .padding()
         .padding(.horizontal, 10)
         .background(.cardSurface)
@@ -42,5 +48,5 @@ struct SandwichCardView: View {
 }
 
 #Preview {
-    SandwichCardView(sandwichName: "Turkey Club", sandwichImage: .turkeyClub, ingredients: "Ovengold Turkey, Bacon, Lettuce, Tomato, Mayonnaise", price: 8.99)
+    SandwichCardView(sandwichName: "Blzzing Saddle", sandwichImage: "BlazingSaddle", description: "Blazzing buffalo chicken, Bacon, Lettuce, Tomato, Mayonnaise", rollPrice: 8.99, heroPrice: 10.99)
 }

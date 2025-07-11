@@ -1,118 +1,365 @@
 [
-  {
-    "id": "1",
-    "name": "Chicken Italiano",
-    "breadOptions": [
-      "Roll",
-      "Hero"
-    ],
-    "proteinOptions": [
-      "Grilled Chicken"
-    ],
-    "description": "Grilled Chicken, Melted Fresh Mozzarella, Lettuce & Roasted Peppers",
-    "priceRoll": 8.99,
-    "priceHero": 10.99
-  },
-  {
-    "id": "2",
-    "name": "The Alps",
-    "breadOptions": [
-      "Roll",
-      "Hero"
-    ],
-    "proteinOptions": [
-      "Grilled Chicken"
-    ],
-    "description": "Grilled Chicken, Lacey Swiss Cheese & Coleslaw",
-    "priceRoll": 8.99,
-    "priceHero": 10.99
-  },
-  {
-    "id": "3",
-    "name": "Baumann",
-    "breadOptions": [
-      "Roll",
-      "Hero"
-    ],
-    "proteinOptions": [
-      "Pastrami",
-      "Bacon"
-    ],
-    "description": "Grilled Pastrami, Bacon, 3 Cheeses, Lettuce, Tomato & Spicy Mustard",
-    "priceRoll": 8.99,
-    "priceHero": 10.99
-  },
-  {
-    "id": "4",
-    "name": "Moonstruck",
-    "breadOptions": [
-      "Roll",
-      "Hero"
-    ],
-    "proteinOptions": [
-      "Grilled Marinated Chicken"
-    ],
-    "description": "Grilled Marinated Chicken & Roasted Peppers",
-    "priceRoll": 8.99,
-    "priceHero": 10.99
-  },
-  {
-    "id": "5",
-    "name": "Cordon Bleu",
-    "breadOptions": [
-      "Roll",
-      "Hero"
-    ],
-    "proteinOptions": [
-      "Fried Chicken Cutlet"
-    ],
-    "description": "Fried Chicken Cutlet, Prosciutto & Melted Mozzarella",
-    "priceRoll": 8.99,
-    "priceHero": 10.99
-  },
-  {
-    "id": "6",
-    "name": "Cancun",
-    "breadOptions": [
-      "Roll",
-      "Hero"
-    ],
-    "proteinOptions": [
-      "Chicken Salad",
-      "Virginia Ham"
-    ],
-    "description": "Chicken Salad, Virginia Ham, Lettuce & Tomato",
-    "priceRoll": 8.99,
-    "priceHero": 10.99
-  },
-  {
-    "id": "7",
-    "name": "Borderlands",
-    "breadOptions": [
-      "Roll",
-      "Hero"
-    ],
-    "proteinOptions": [
-      "Grilled Marinated Chicken"
-    ],
-    "description": "Grilled Marinated Chicken, Melted Jalapeno Pepper Jack Cheese & Salsa",
-    "priceRoll": 8.99,
-    "priceHero": 10.99
-  },
-  {
-    "id": "8",
-    "name": "Grandson",
-    "breadOptions": [
-      "Roll",
-      "Hero"
-    ],
-    "proteinOptions": [
-      "Mortadella",
-      "Cappy Ham",
-      "Genoa Salami"
-    ],
-    "description": "Mortadella, Cappy Ham, Genoa Salami, Provolone, Lettuce, Tomato, Roasted Peppers & Olive Oil",
-    "priceRoll": 8.99,
-    "priceHero": 10.99
-  }
+    {
+        "id": "1",
+        "name": "Chicken Italiano",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Grilled Chicken, Melted Fresh Mozzarella, Lettuce & Roasted Peppers",
+        "rollPrice": 8.99,
+        "heroPrice": 10.99,
+        "category": "Signature",
+        "sandwichImage": "ChickenItaliano"
+    },
+    {
+        "id": "2",
+        "name": "The Alps",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Grilled Chicken, Lacey Swiss Cheese & Coleslaw",
+        "rollPrice": 8.99,
+        "heroPrice": 10.99,
+        "category": "Signature",
+        "sandwichImage": "TheAlps"
+    },
+    {
+        "id": "3",
+        "name": "Baumanno",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Grilled Pastrami, Bacon, 3 Cheeses, Lettuce, Tomato & Spicy Mustard",
+        "rollPrice": 8.99,
+        "heroPrice": 10.99,
+        "category": "Signature",
+        "sandwichImage": "Baumanno"
+    },
+    {
+        "id": "4",
+        "name": "Moonstruck",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Grilled Marinated Chicken & Roasted Peppers",
+        "rollPrice": 8.99,
+        "heroPrice": 10.99,
+        "category": "Signature",
+        "sandwichImage": "Moonstruck"
+    },
+    {
+        "id": "5",
+        "name": "Cordon Bleu",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Fried Chicken Cutlet, Prosciutto & Melted Mozzarella",
+        "rollPrice": 8.99,
+        "heroPrice": 10.99,
+        "category": "Signature",
+        "sandwichImage": "CordonBleu"
+    },
+    {
+        "id": "6",
+        "name": "Cancun",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Chicken Salad, Virginia Ham, Lettuce & Tomato",
+        "rollPrice": 8.99,
+        "heroPrice": 10.99,
+        "category": "Signature",
+        "sandwichImage": "Cancun"
+    },
+    {
+        "id": "7",
+        "name": "Borderlands",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Grilled Marinated Chicken, Melted Jalapeño Pepper Jack Cheese & Salsa",
+        "rollPrice": 8.99,
+        "heroPrice": 10.99,
+        "category": "Signature",
+        "sandwichImage": "Borderlands"
+    },
+    {
+        "id": "8",
+        "name": "Grandson",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Mortadella, Cappy Ham, Genoa Salami, Provolone, Lettuce, Tomato, Roasted Peppers & Olive Oil",
+        "rollPrice": 8.99,
+        "heroPrice": 10.99,
+        "category": "Signature",
+        "sandwichImage": "Grandson"
+    },
+    {
+        "id": "9",
+        "name": "Siciliano",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Eggplant, Fresh Mozzarella, Roasted Peppers & Balsamic Vinegar",
+        "rollPrice": 8.99,
+        "heroPrice": 10.99,
+        "category": "Signature",
+        "sandwichImage": "Siciliano"
+    },
+    {
+        "id": "10",
+        "name": "Cheesesteak",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Roast Beef, Melted American Cheese, Peppers & Onions",
+        "rollPrice": 8.99,
+        "heroPrice": 10.99,
+        "category": "Signature",
+        "sandwichImage": "Cheesesteak"
+    },
+    {
+        "id": "11",
+        "name": "Chopped Cheese",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Ground Beef, Melted American Cheese, Peppers & Onions",
+        "rollPrice": 8.99,
+        "heroPrice": 10.99,
+        "category": "Signature",
+        "sandwichImage": "ChoppedCheese"
+    },
+    {
+        "id": "12",
+        "name": "Chicken Parm",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Chicken Cutlet, Mozzarella & Marinara Sauce",
+        "rollPrice": 8.99,
+        "heroPrice": 10.99,
+        "category": "Signature",
+        "sandwichImage": "ChickenParm"
+    },
+    {
+        "id": "13",
+        "name": "Eggplant Parm",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Fried Eggplant, Mozzarella & Marinara Sauce",
+        "rollPrice": 8.99,
+        "heroPrice": 10.99,
+        "category": "Signature",
+        "sandwichImage": "Eggplant"
+    },
+    {
+        "id": "14",
+        "name": "Meatball Parm",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Meatballs, Mozzarella & Marinara Sauce",
+        "rollPrice": 8.99,
+        "heroPrice": 10.99,
+        "category": "Signature",
+        "sandwichImage": "MeatballParm"
+    },
+    {
+        "id": "15",
+        "name": "Pastrami",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "with Melted Swiss, Grilled Onions & Mustard",
+        "rollPrice": 8.99,
+        "heroPrice": 10.99,
+        "category": "Signature",
+        "sandwichImage": "Pastrami"
+    },
+    {
+        "id": "16",
+        "name": "Blazing Saddle",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Blazing Buffalo® Chicken, Bacon, Lettuce, Tomato & Blue Cheese Dressing or Mayo",
+        "rollPrice": 8.99,
+        "heroPrice": 10.99,
+        "category": "Signature",
+        "sandwichImage": "BlazingSaddle"
+    },
+    {
+        "id": "17",
+        "name": "American Combo",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Deluxe Ham, Ovengold Turkey, Roast Beef, American Cheese, Lettuce, Tomato & Mayo",
+        "rollPrice": 9.99,
+        "heroPrice": 11.99,
+        "category": "Signature",
+        "sandwichImage": "AmericanCombo"
+    },
+    {
+        "id": "18",
+        "name": "Honeymoon",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Maple Honey Turkey, Maple Honey Ham, Muenster Cheese, Lettuce, Tomato & Honey Mustard",
+        "rollPrice": 8.99,
+        "heroPrice": 10.99,
+        "category": "Signature",
+        "sandwichImage": "Honeymoon"
+    },
+    {
+        "id": "19",
+        "name": "Donnie Brasco",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Genoa Salami, Cappy Ham, Provolone, Fried Eggplant, Lettuce, Tomato, Roasted Peppers & Italian Dressing",
+        "rollPrice": 9.99,
+        "heroPrice": 11.99,
+        "category": "Signature",
+        "sandwichImage": "DonnieBrasco"
+    },
+    {
+        "id": "20",
+        "name": "Throggs Neck",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Maple Honey Ham, Cappy Ham, Fresh Mozzarella, Lettuce, Tomato, Roasted Peppers & Italian Dressing",
+        "rollPrice": 9.99,
+        "heroPrice": 11.99,
+        "category": "Signature",
+        "sandwichImage": "ThroggsNeck"
+    },
+    {
+        "id": "21",
+        "name": "Turkey Club",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Ovengold Turkey, Bacon, Lettuce, Tomato & Mayo",
+        "rollPrice": 8.99,
+        "heroPrice": 10.99,
+        "category": "Signature",
+        "sandwichImage": "TurkeyClub"
+    },
+    {
+        "id": "22",
+        "name": "Fiesta",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Salsalito Turkey, 3 Pepper Colby Jack Cheese, Lettuce, Tomato, Jalapeños & Fiery Chipotle Gourmaise",
+        "rollPrice": 8.99,
+        "heroPrice": 10.99,
+        "category": "Signature",
+        "sandwichImage": "Fiesta"
+    },
+    {
+        "id": "23",
+        "name": "Goodfella",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Cappy Ham, Sopressata, Provolone, Fried Eggplant, Hot Peppers & Italian Dressing",
+        "rollPrice": 9.99,
+        "heroPrice": 11.99,
+        "category": "Signature",
+        "sandwichImage": "Goodfella"
+    },
+    {
+        "id": "24",
+        "name": "Double Trouble",
+        "breadOptions": ["Roll", "Hero"],
+        "description": "Deluxe Ham, Salsalito Turkey, 3 Pepper Colby Jack Cheese, Lettuce, Roasted Peppers & Honey Mustard",
+        "rollPrice": 8.99,
+        "heroPrice": 10.99,
+        "category": "Signature",
+        "sandwichImage": "DoubleTrouble"
+    },
+   
+    {
+            "id": "27",
+            "name": "Bacon Egg & Cheese",
+            "breadOptions": ["Roll", "Hero"],
+            "description": "Crispy Bacon, Fried Egg, Melted American Cheese",
+            "rollPrice": 6.99,
+            "heroPrice": 8.99,
+            "category": "Classic",
+            "sandwichImage": "baconEggandCheese"
+        },
+        {
+            "id": "28",
+            "name": "Sausage Egg & Cheese",
+            "breadOptions": ["Roll", "Hero"],
+            "description": "Savory Sausage Patty, Fried Egg, Melted American Cheese",
+            "rollPrice": 6.99,
+            "heroPrice": 8.99,
+            "category": "Classic",
+            "sandwichImage": "sausageEggAndCheese"
+        },
+        {
+            "id": "29",
+            "name": "Ham Egg & Cheese",
+            "breadOptions": ["Roll", "Hero"],
+            "description": "Deluxe Ham, Fried Egg, Melted American Cheese",
+            "rollPrice": 6.99,
+            "heroPrice": 8.99,
+            "category": "Classic",
+            "sandwichImage": "HamEggandCheese"
+        },
+        {
+            "id": "30",
+            "name": "Turkey & Swiss",
+            "breadOptions": ["Roll", "Hero"],
+            "description": "Ovengold Turkey, Swiss Cheese, Lettuce, Tomato, Mayo",
+            "rollPrice": 7.99,
+            "heroPrice": 9.99,
+            "category": "Classic",
+            "sandwichImage": "TurkeySwiss"
+        },
+        {
+            "id": "31",
+            "name": "Ham & Cheese",
+            "breadOptions": ["Roll", "Hero"],
+            "description": "Deluxe Ham, American Cheese, Lettuce, Tomato, Mustard",
+            "rollPrice": 7.99,
+            "heroPrice": 9.99,
+            "category": "Classic",
+            "sandwichImage": "HamCheese"
+        },
+        {
+            "id": "32",
+            "name": "BLT",
+            "breadOptions": ["Roll", "Hero"],
+            "description": "Bacon, Lettuce, Tomato & Mayo",
+            "rollPrice": 6.99,
+            "heroPrice": 8.99,
+            "category": "Classic",
+            "sandwichImage": "BLT"
+        },
+        {
+            "id": "33",
+            "name": "Tuna Salad",
+            "breadOptions": ["Roll", "Hero"],
+            "description": "Homemade Tuna Salad, Lettuce, Tomato",
+            "rollPrice": 7.99,
+            "heroPrice": 9.99,
+            "category": "Classic",
+            "sandwichImage": "TunaSaladRoll"
+        },
+        {
+            "id": "34",
+            "name": "Egg Salad",
+            "breadOptions": ["Roll", "Hero"],
+            "description": "Creamy Egg Salad, Lettuce",
+            "rollPrice": 6.99,
+            "heroPrice": 8.99,
+            "category": "Classic",
+            "sandwichImage": "EggSaladRoll"
+        },
+        {
+            "id": "35",
+            "name": "Chicken Salad",
+            "breadOptions": ["Roll", "Hero"],
+            "description": "Homemade Chicken Salad, Lettuce, Tomato",
+            "rollPrice": 7.99,
+            "heroPrice": 9.99,
+            "category": "Classic",
+            "sandwichImage": "ChickenSaladRoll"
+        },
+        {
+            "id": "36",
+            "name": "Grilled Cheese",
+            "breadOptions": ["Roll", "Hero"],
+            "description": "Melted American Cheese on Toasted Bread",
+            "rollPrice": 5.99,
+            "heroPrice": 7.99,
+            "category": "Classic",
+            "sandwichImage": "GrilledCheese"
+        },
+        {
+            "id": "37",
+            "name": "Club Sandwich",
+            "breadOptions": ["Roll", "Hero"],
+            "description": "Turkey, Bacon, Lettuce, Tomato, Mayo on Triple Bread",
+            "rollPrice": 8.99,
+            "heroPrice": 10.99,
+            "category": "Classic",
+            "sandwichImage": "ClubSandwich"
+        },
+        {
+            "id": "38",
+            "name": "Egg & Cheese",
+            "breadOptions": ["Roll", "Hero"],
+            "description": "2 Scrambbled Egg and Cheese",
+            "rollPrice": 8.99,
+            "heroPrice": 10.99,
+            "category": "Classic",
+            "sandwichImage": "EggandCheese"
+        },
+    
+
 ]

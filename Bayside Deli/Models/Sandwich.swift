@@ -7,13 +7,16 @@
 
 import Foundation
 
-struct Sandwich: Identifiable, Codable {
+struct Sandwich: Identifiable, Decodable, Hashable {
     var id: String
     var name: String
+    var sandwichImage: String
     var breadOptions: [String]
-    var proteinOptions: [String]
     var description: String
-    var priceRoll: Double
-    var priceHero: Double
+    var rollPrice: Double
+    var heroPrice: Double
+    var category: String
+    
 
 }
+
