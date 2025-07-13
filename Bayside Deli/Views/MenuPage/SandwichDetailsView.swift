@@ -9,11 +9,13 @@ import SwiftUI
 
 struct SandwichDetailsView: View {
     
- 
-    @State var sandwichPrice = 8.99
-    @State var breadPrice: Double = 0.0
-    @State var extraPrice: Double = 0.0
-    @Binding var selectedTab: String
+    @State var sandwichName: String
+    @State var sandwichPrice: Double
+    @State var sandwichDescription: String
+    @State var sandwichImage: String
+    @State var breadPrice: Double
+    @State var extraPrice: Double
+   
   
     var finalPrice: Double {
         sandwichPrice + breadPrice + extraPrice
@@ -21,28 +23,37 @@ struct SandwichDetailsView: View {
  
     var body: some View {
         ZStack {
+            Color("Background").ignoresSafeArea()
             VStack {
-                Image(.BLT)
+                Image(sandwichImage)
                     .resizable()
-                    .scaledToFill()
-                    .ignoresSafeArea()
+                    .scaledToFit()
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                   
                 
                 
                 
                 HStack {
-                    Text("Bacon Egg and Cheese")
+                    Text(sandwichName)
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundStyle(.primaryText)
                     
                     Text(String(format: "$ %.2f", finalPrice))
                         .foregroundStyle(.primaryBtn)
                 }
                 .font(.system(size: 25, weight: .bold, design: .rounded))
                 .padding(.horizontal)
-                .padding(.top, -15)
+                .padding(.top)
                 
                 
                 // Bread Type
                 ScrollView {
+                    Text(sandwichDescription)
+                        .foregroundStyle(.primaryText.opacity(0.8))
+                        .font(.headline)
+                        .multilineTextAlignment(.center)
+                        .scaleEffect(0.9)
+                    
                     AddOnCheckboxView(
                         title: "Select Your Bread",
                         options: [
@@ -83,5 +94,5 @@ struct SandwichDetailsView: View {
 }
 
 #Preview {
-    SandwichDetailsView(selectedTab: .constant("History"))
+    SandwichDetailsView(sandwichName: "Bacon Egg and Cheese", sandwichPrice: 5.99, sandwichDescription: "Crispy Bacon, Fried Egg, Melted American Cheese",  sandwichImage: "BLT", breadPrice: 0.0, extraPrice: 0.0)
 }

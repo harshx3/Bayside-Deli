@@ -13,21 +13,24 @@ struct AddOnCheckboxView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 5) {
             Text(title)
                 .font(.system(size: 20, weight: .bold, design: .rounded))
                 .padding(.horizontal, 16)
                 .padding(.top, 8)
+                .foregroundStyle(.secondaryText)
             
             ForEach(options.indices, id: \.self) { index in
                 HStack(spacing: 16) {
                     Text(options[index].name)
                         .font(.system(size: 15, weight: .medium, design: .rounded))
+                        .foregroundStyle(.primaryText)
                     
                     Spacer()
                     
                     Text(String(format: "+$%.2f", options[index].price))
                         .font(.system(size: 15, weight: .medium, design: .rounded))
+                        .foregroundStyle(.primaryText)
                     
                     Image(systemName: selectionType == .single ?
                           (options[index].isSelected ? "largecircle.fill.circle" : "circle") :

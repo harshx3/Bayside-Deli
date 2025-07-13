@@ -21,7 +21,7 @@ struct ContentView: View {
                 CartView(selectedTab: $selectedTab)
             }
             else if selectedTab == "History" {
-                SandwichDetailsView(selectedTab: $selectedTab)
+                HistoryView(selectedTab: $selectedTab)
             }
             else {
                 ProfileView(selectedTab: $selectedTab)
