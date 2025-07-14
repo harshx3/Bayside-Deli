@@ -15,6 +15,9 @@ struct SandwichDetailsView: View {
     @State var sandwichImage: String
     @State var breadPrice: Double
     @State var extraPrice: Double
+
+    
+    @Binding var selectedSandwich: Sandwich?
    
   
     var finalPrice: Double {
@@ -25,6 +28,23 @@ struct SandwichDetailsView: View {
         ZStack {
             Color("Background").ignoresSafeArea()
             VStack {
+                Button {
+                    withAnimation(.default){
+                        selectedSandwich = nil
+                    }
+                } label: {
+                    HStack() {
+                        Image(systemName: "chevron.left")
+                        Text("Back")
+                        
+                    }
+                    .font(.title2)
+                    .foregroundStyle(.primaryBtn)
+                    .fontWeight(.semibold)
+                    .padding(.vertical, 5)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, 35)
                 Image(sandwichImage)
                     .resizable()
                     .scaledToFit()
@@ -94,5 +114,5 @@ struct SandwichDetailsView: View {
 }
 
 #Preview {
-    SandwichDetailsView(sandwichName: "Bacon Egg and Cheese", sandwichPrice: 5.99, sandwichDescription: "Crispy Bacon, Fried Egg, Melted American Cheese",  sandwichImage: "BLT", breadPrice: 0.0, extraPrice: 0.0)
+    SandwichDetailsView(sandwichName: "Bacon Egg and Cheese", sandwichPrice: 5.99, sandwichDescription: "Crispy Bacon, Fried Egg, Melted American Cheese",  sandwichImage: "BLT", breadPrice: 0.0, extraPrice: 0.0, selectedSandwich: .constant(nil))
 }

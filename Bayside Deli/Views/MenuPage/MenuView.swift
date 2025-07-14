@@ -7,6 +7,7 @@ struct MenuView: View {
     
     @StateObject private var dataService = DataService()
     @Binding var selectedTab: String
+    @Binding var selectedSandwich: Sandwich?
     
     
     var body: some View {
@@ -23,9 +24,9 @@ struct MenuView: View {
                 sandwichList
             }
         }
-        .navigationTitle("Menu")
         .navigationBarTitleDisplayMode(.inline)
     }
+
     
     private var categoryPicker: some View {
         HStack {
@@ -73,16 +74,10 @@ struct MenuView: View {
     }
     
     private func sandwichCard(for sandwich: Sandwich) -> some View {
-        NavigationLink {
-            SandwichDetailsView(
-                sandwichName: sandwich.name,
-                sandwichPrice: sandwich.rollPrice,
-                sandwichDescription: sandwich.description,
-                sandwichImage: sandwich.sandwichImage,
-                breadPrice: 0.0,
-                extraPrice: 0.0,
-                
-            )
+        Button {
+            withAnimation(.easeIn){
+                selectedSandwich = sandwich
+            }
         } label: {
             SandwichCardView(
                 sandwichName: sandwich.name,
@@ -104,5 +99,5 @@ struct MenuView: View {
 }
 
 #Preview {
-    MenuView(selectedTab: .constant("Menu"))
+    MenuView(selectedTab: .constant("Menu"), selectedSandwich: .constant(nil))
 }
