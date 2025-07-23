@@ -18,6 +18,9 @@ struct SandwichDetailsView: View {
 
     
     @Binding var selectedSandwich: Sandwich?
+    
+    //Injecting cart Manager
+    @EnvironmentObject var cartManager: CartManager
    
   
     var finalPrice: Double {
@@ -103,7 +106,13 @@ struct SandwichDetailsView: View {
             }
             
             VStack {
-                CreateButton(btnImage: "Cart", btnText: "Add to Cart", btnTextColor: .primaryText, btnBackgroundColor: .primaryBtn)
+                Button {
+                    
+                } label: {
+                    CreateButton(btnImage: "Cart", btnText: "Add to Cart", btnTextColor: .primaryText, btnBackgroundColor: .primaryBtn)
+                }
+          
+                    
             }
             .frame(maxHeight: .infinity, alignment: .bottom)
             
