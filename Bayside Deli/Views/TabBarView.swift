@@ -26,6 +26,7 @@ struct TabBarView: View {
                 }
             }
             .frame(maxWidth: .infinity)
+            .padding(.horizontal, 12)
             .padding(.vertical, 15)
             .background(.primaryBtn)
             .clipShape(.buttonBorder)
@@ -49,11 +50,11 @@ struct TabItem: View {
     @Binding var selectedTab: String
 
     var body: some View {
-        VStack {
+        VStack(spacing: 3) {
             Image(tabIcon)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 40)
+                .frame(width: selectedTab == tabName ? 40 : 32, height: selectedTab == tabName ? 32 : 28)
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(
@@ -67,14 +68,22 @@ struct TabItem: View {
                             lineWidth: 3
                         )
                 )
+                .shadow(color: selectedTab == tabName ? .primaryBtn.opacity(0.25) : .clear, radius: 5, y: 1)
+                .animation(.easeInOut(duration: 0.15), value: selectedTab)
             Text(tabName)
-                .font(.system(size: 15))
+                .font(.system(size: selectedTab == tabName ? 14 : 12))
                 .fontDesign(.monospaced)
                 .fontWeight(.semibold)
                 .foregroundStyle(selectedTab == tabName ? .cardSurface : .primaryText)
                 .lineLimit(1)
                 .minimumScaleFactor(0.8)
+                .animation(.easeInOut(duration: 0.15), value: selectedTab)
         }
+        .padding(.vertical, 4)
+        .frame(maxWidth: .infinity)
+        .background(selectedTab == tabName ? Color.primaryBtn.opacity(0.18) : .clear)
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .contentShape(Rectangle())
         .onTapGesture {
             selectedTab = tabName
         }
@@ -84,3 +93,4 @@ struct TabItem: View {
 #Preview {
     TabItem(tabIcon: .home, tabName: "Home", selectedTab: .constant("Home") )
 }
+
