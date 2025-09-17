@@ -1,11 +1,12 @@
-
 import SwiftUI
 
 struct AddOnCheckboxView: View {
     let title: String
-    @State var options: [(name: String, price: Double, isSelected: Bool)]
+    let options: [(name: String, price: Double)]
     let selectionType: SelectionType
     @Binding var selectedPrice: Double
+    @Binding var selectedOption: String?
+    @Binding var selectedOptions: [String]
     
     enum SelectionType {
         case single  // For bread (only one selection)
@@ -21,6 +22,10 @@ struct AddOnCheckboxView: View {
                 .foregroundStyle(.secondaryText)
             
             ForEach(options.indices, id: \.self) { index in
+                let isSelected = (selectionType == .single) ?
+                    (selectedOption == options[index].name) :
+                    (selectedOptions.contains(options[index].name))
+                
                 HStack(spacing: 16) {
                     Text(options[index].name)
                         .font(.system(size: 15, weight: .medium, design: .rounded))
@@ -33,11 +38,11 @@ struct AddOnCheckboxView: View {
                         .foregroundStyle(.primaryText)
                     
                     Image(systemName: selectionType == .single ?
-                          (options[index].isSelected ? "largecircle.fill.circle" : "circle") :
-                          (options[index].isSelected ? "checkmark.square.fill" : "square"))
+                          (isSelected ? "largecircle.fill.circle" : "circle") :
+                          (isSelected ? "checkmark.square.fill" : "square"))
                         .resizable()
                         .frame(width: 24, height: 24)
-                        .foregroundColor(options[index].isSelected ? .blue : .gray)
+                        .foregroundColor(isSelected ? .blue : .gray)
                         .onTapGesture {
                             updateSelection(at: index)
                             calculateTotal()
@@ -55,53 +60,83 @@ struct AddOnCheckboxView: View {
     private func updateSelection(at index: Int) {
         switch selectionType {
         case .single:
-            // Bread logic: Deselect all others
-            options.indices.forEach { i in
-                options[i].isSelected = (i == index)
-            }
+            selectedOption = options[index].name
+            selectedOptions.removeAll()
         case .multiple:
-            // Extras logic: Toggle current item
-            options[index].isSelected.toggle()
+            let optionName = options[index].name
+            if selectedOptions.contains(optionName) {
+                selectedOptions.removeAll(where: { $0 == optionName })
+            } else {
+                selectedOptions.append(optionName)
+            }
+            selectedOption = nil
         }
     }
     
     private func calculateTotal() {
-        let selectedOption = options.filter { option in
-            option.isSelected
-        }
-        
         var totalPrice = 0.0
-        for option in selectedOption {
-            totalPrice += option.price
+        switch selectionType {
+        case .single:
+            if let selected = selectedOption,
+               let option = options.first(where: { $0.name == selected }) {
+                totalPrice = option.price
+            }
+        case .multiple:
+            for selected in selectedOptions {
+                if let option = options.first(where: { $0.name == selected }) {
+                    totalPrice += option.price
+                }
+            }
         }
         selectedPrice = totalPrice
     }
 }
 
-#Preview {
-    Group {
-        // Preview for bread selection (single)
+struct BreadPreviewWrapper: View {
+    @State private var selectedPrice: Double = 0.0
+    @State private var selectedOption: String? = nil
+    @State private var selectedOptions: [String] = []
+    
+    var body: some View {
         AddOnCheckboxView(
             title: "Select Your Bread",
             options: [
-                (name: "Roll", price: 0.0, isSelected: false),
-                (name: "Hero", price: 1.99, isSelected: false),
-                (name: "Wrap", price: 2.49, isSelected: false)
+                (name: "Roll", price: 0.0),
+                (name: "Hero", price: 1.99),
+                (name: "Wrap", price: 2.49)
             ],
             selectionType: .single,
-            selectedPrice: .constant(0.0)
+            selectedPrice: $selectedPrice,
+            selectedOption: $selectedOption,
+            selectedOptions: $selectedOptions
         )
-        
-        // Preview for extras selection (multiple)
+    }
+}
+
+struct ExtrasPreviewWrapper: View {
+    @State private var selectedPrice: Double = 0.0
+    @State private var selectedOption: String? = nil
+    @State private var selectedOptions: [String] = []
+    
+    var body: some View {
         AddOnCheckboxView(
             title: "Extras",
             options: [
-                (name: "Lettuce", price: 0.5, isSelected: false),
-                (name: "Tomato", price: 0.5, isSelected: false),
-                (name: "Avocado", price: 1.0, isSelected: false)
+                (name: "Lettuce", price: 0.5),
+                (name: "Tomato", price: 0.5),
+                (name: "Avocado", price: 1.0)
             ],
             selectionType: .multiple,
-            selectedPrice: .constant(0.0)
+            selectedPrice: $selectedPrice,
+            selectedOption: $selectedOption,
+            selectedOptions: $selectedOptions
         )
+    }
+}
+
+#Preview {
+    Group {
+        BreadPreviewWrapper()
+        ExtrasPreviewWrapper()
     }
 }

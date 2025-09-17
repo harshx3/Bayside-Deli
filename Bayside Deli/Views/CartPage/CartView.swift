@@ -10,10 +10,11 @@ import SwiftUI
 struct CartView: View {
     @Binding var selectedTab: String
     var body: some View {
-        Text("Cart Page")
+        CartProduct()
     }
 }
 
 #Preview {
     CartView(selectedTab: .constant("Cart"))
+        .environmentObject(CartManager())
 }

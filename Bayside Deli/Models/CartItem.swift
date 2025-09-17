@@ -9,8 +9,10 @@ import Foundation
 struct CartItem: Identifiable, Hashable {
     
     let id = UUID()
-    var sandwich: Sandwich
+    var sandwichName: String
+    var sandwichImage: String
     var selectedBread: String
+    var sandwichFinalPrice: Double
     var addOns: String
     var quantity: Int
 }

@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct MenuView: View {
+    @EnvironmentObject var cartManager: CartManager
     @State private var selectedCategory: String = "All"
     private let categories: [String] = ["All", "Classic", "Signature", "Healthy", "Hot", "Platter", "Healthy Wrap"]
     @State private var searchSandwich: String = ""
